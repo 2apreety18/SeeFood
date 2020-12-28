@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="w1C-dt-FTh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fGw-G7-Yn4">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
@@ -16,9 +16,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nXr-zq-6cF">
-                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hotdogpropic" translatesAutoresizingMaskIntoConstraints="NO" id="nXr-zq-6cF">
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                             </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="P15-kg-Fia">
+                                <rect key="frame" x="80" y="627.5" width="254.5" height="94.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SELECT A PHOTO TO FIND OUT" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LgA-QV-h9C">
+                                        <rect key="frame" x="0.0" y="0.0" width="254.5" height="22.5"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Ebr-x0-wF8" userLabel="ButtonView">
+                                        <rect key="frame" x="0.0" y="30.5" width="254.5" height="64"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ddt-YN-svk">
+                                                <rect key="frame" x="0.0" y="0.0" width="127" height="64"/>
+                                                <state key="normal" image="camera"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HCA-2K-lDF">
+                                                <rect key="frame" x="127" y="0.0" width="127.5" height="64"/>
+                                                <state key="normal" image="gallery"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="LgA-QV-h9C" firstAttribute="top" secondItem="P15-kg-Fia" secondAttribute="top" id="2Sn-1N-13v"/>
+                                    <constraint firstItem="Ebr-x0-wF8" firstAttribute="centerX" secondItem="P15-kg-Fia" secondAttribute="centerX" id="R8d-aM-zqu"/>
+                                    <constraint firstItem="Ebr-x0-wF8" firstAttribute="top" secondItem="LgA-QV-h9C" secondAttribute="bottom" constant="8" symbolic="YES" id="eLg-kD-b8G"/>
+                                    <constraint firstItem="Ebr-x0-wF8" firstAttribute="top" secondItem="LgA-QV-h9C" secondAttribute="bottom" constant="8" symbolic="YES" id="egU-v9-mC1"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -27,6 +57,8 @@
                             <constraint firstItem="nXr-zq-6cF" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="8z7-1S-Qri"/>
                             <constraint firstItem="nXr-zq-6cF" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="IBZ-69-b8U"/>
                             <constraint firstAttribute="bottom" secondItem="nXr-zq-6cF" secondAttribute="bottom" id="Lcj-eC-LKi"/>
+                            <constraint firstItem="P15-kg-Fia" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bLP-XI-hON"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="P15-kg-Fia" secondAttribute="bottom" constant="140" id="yY8-by-3dC"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="T0i-Zl-tQ8">
@@ -42,7 +74,50 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="498.55072463768118" y="91.741071428571431"/>
+            <point key="canvasLocation" x="572" y="92"/>
+        </scene>
+        <!--Launch Screen View Controller-->
+        <scene sceneID="MhZ-dJ-IHg">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9XX-Yb-W1f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewController id="fGw-G7-Yn4" customClass="LaunchScreenViewController" customModule="SeeFood" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2FS-Zf-l40">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&quot;The Shazam For Food&quot;" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1LJ-34-Wgn">
+                                <rect key="frame" x="65" y="458" width="284" height="31.5"/>
+                                <fontDescription key="fontDescription" name="TimesNewRomanPS-ItalicMT" family="Times New Roman" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🌭SEEFOOD" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pfC-R2-N5m" customClass="CLTypingLabel" customModule="CLTypingLabel">
+                                <rect key="frame" x="207" y="414" width="0.0" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="6Hn-N3-fFF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="BiC-Gz-cS8"/>
+                        <color key="backgroundColor" red="1" green="0.74117647060000003" blue="0.34901960780000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="pfC-R2-N5m" firstAttribute="centerX" secondItem="2FS-Zf-l40" secondAttribute="centerX" id="PVZ-Cr-0Vt"/>
+                            <constraint firstItem="1LJ-34-Wgn" firstAttribute="top" secondItem="pfC-R2-N5m" secondAttribute="bottom" constant="23" id="hhU-yO-NYk"/>
+                            <constraint firstItem="1LJ-34-Wgn" firstAttribute="leading" secondItem="BiC-Gz-cS8" secondAttribute="leading" constant="65" id="rmb-Hn-cFU"/>
+                            <constraint firstItem="pfC-R2-N5m" firstAttribute="top" secondItem="BiC-Gz-cS8" secondAttribute="top" constant="370" id="wEv-KZ-62Z"/>
+                            <constraint firstItem="BiC-Gz-cS8" firstAttribute="trailing" secondItem="1LJ-34-Wgn" secondAttribute="trailing" constant="65" id="xM7-v3-gi4"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="myTypeWriterLabel" destination="pfC-R2-N5m" id="0ZE-ce-j0v"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="showHome" modalPresentationStyle="fullScreen" id="7tx-Q1-Kht"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="-1036.231884057971" y="91.741071428571431"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="OnQ-8k-6fR">
@@ -63,7 +138,16 @@
             <point key="canvasLocation" x="-248" y="92"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="pfC-R2-N5m"/>
+    </designables>
+    <inferredMetricsTieBreakers>
+        <segue reference="7tx-Q1-Kht"/>
+    </inferredMetricsTieBreakers>
     <resources>
+        <image name="camera" width="50" height="50"/>
+        <image name="gallery" width="64" height="64"/>
+        <image name="hotdogpropic" width="1080" height="1920"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -8,19 +8,28 @@
 import UIKit
 import CoreML
 import Vision
+import Floaty
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate,UINavigationControllerDelegate {
+    
+    let floaty = Floaty()
 
     @IBOutlet weak var imageView: UIImageView!
+
     
     let imagePicker = UIImagePickerController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         imagePicker.delegate = self
-        imagePicker.sourceType = .camera
+     //   imagePicker.sourceType = .camera
         imagePicker.allowsEditing = false
+        floaty.addItem("Camera", icon: UIImage(named: "camera")!)
+        floaty.addItem("Gallery", icon: UIImage(named: "gallery")!)
+        self.view.addSubview(floaty)
+
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
@@ -53,12 +62,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,UINaviga
             print(results)
             
             if let firstResult = results.first {
-//                if firstResult.identifier.contains("hotdog") {
-//                    self.navigationItem.title = "Hotdog!"
-//                } else {
-//                    self.navigationItem.title = "Not Hotdog!"
-//                }
-                self.navigationItem.title = String(firstResult.identifier)
+                if firstResult.identifier.contains("hotdog") {
+                    self.navigationItem.title = "Hotdog!"
+                } else {
+                    self.navigationItem.title = "Not Hotdog!"
+                }
+              //  self.navigationItem.title = String(firstResult.identifier)
             }
         }
         
@@ -72,7 +81,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,UINaviga
     }
 
     @IBAction func cameraTapped(_ sender: UIBarButtonItem) {
-        
+        imagePicker.sourceType = .camera
         present(imagePicker, animated: true, completion: nil)
     }
     

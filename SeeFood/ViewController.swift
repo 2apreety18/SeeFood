@@ -12,8 +12,8 @@ import Floaty
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate,UINavigationControllerDelegate {
     
-    let floaty = Floaty()
-
+   // let floaty = Floaty()
+    @IBOutlet weak var floaty: Floaty!
     @IBOutlet weak var imageView: UIImageView!
 
     
@@ -22,13 +22,19 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,UINaviga
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         imagePicker.delegate = self
-     //   imagePicker.sourceType = .camera
+        imagePicker.sourceType = .camera
         imagePicker.allowsEditing = false
-        floaty.addItem("Camera", icon: UIImage(named: "camera")!)
-        floaty.addItem("Gallery", icon: UIImage(named: "gallery")!)
-        self.view.addSubview(floaty)
+        
+        floaty.addItem("Camera", icon: UIImage(named: "camera")!, handler: {_ in
+            self.imagePicker.sourceType = .camera
+            self.present(self.imagePicker, animated: true, completion: nil)
+        })
+        floaty.addItem("Gallery", icon: UIImage(named: "gallery")!, handler: {_ in
+            self.imagePicker.sourceType = .photoLibrary
+            self.present(self.imagePicker, animated: true, completion: nil)
+        })
+       // self.view.addSubview(floaty)
 
     }
     
@@ -81,9 +87,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate,UINaviga
     }
 
     @IBAction func cameraTapped(_ sender: UIBarButtonItem) {
-        imagePicker.sourceType = .camera
         present(imagePicker, animated: true, completion: nil)
     }
+    
+    
+    
+    
     
 }
 

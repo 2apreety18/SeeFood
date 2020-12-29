@@ -16,39 +16,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hotdogpropic" translatesAutoresizingMaskIntoConstraints="NO" id="nXr-zq-6cF">
-                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hotdogpropic" translatesAutoresizingMaskIntoConstraints="NO" id="nXr-zq-6cF">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="P15-kg-Fia">
-                                <rect key="frame" x="80" y="627.5" width="254.5" height="94.5"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SELECT A PHOTO TO FIND OUT" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LgA-QV-h9C">
-                                        <rect key="frame" x="0.0" y="0.0" width="254.5" height="22.5"/>
-                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Ebr-x0-wF8" userLabel="ButtonView">
-                                        <rect key="frame" x="0.0" y="30.5" width="254.5" height="64"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ddt-YN-svk">
-                                                <rect key="frame" x="0.0" y="0.0" width="127" height="64"/>
-                                                <state key="normal" image="camera"/>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HCA-2K-lDF">
-                                                <rect key="frame" x="127" y="0.0" width="127.5" height="64"/>
-                                                <state key="normal" image="gallery"/>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P0P-aq-CmH" customClass="Floaty" customModule="Floaty">
+                                <rect key="frame" x="344" y="792" width="50" height="50"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="LgA-QV-h9C" firstAttribute="top" secondItem="P15-kg-Fia" secondAttribute="top" id="2Sn-1N-13v"/>
-                                    <constraint firstItem="Ebr-x0-wF8" firstAttribute="centerX" secondItem="P15-kg-Fia" secondAttribute="centerX" id="R8d-aM-zqu"/>
-                                    <constraint firstItem="Ebr-x0-wF8" firstAttribute="top" secondItem="LgA-QV-h9C" secondAttribute="bottom" constant="8" symbolic="YES" id="eLg-kD-b8G"/>
-                                    <constraint firstItem="Ebr-x0-wF8" firstAttribute="top" secondItem="LgA-QV-h9C" secondAttribute="bottom" constant="8" symbolic="YES" id="egU-v9-mC1"/>
+                                    <constraint firstAttribute="width" constant="50" id="jdl-ly-opU"/>
+                                    <constraint firstAttribute="height" constant="50" id="nzK-jW-5ie"/>
                                 </constraints>
-                            </stackView>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="buttonShadowColor">
+                                        <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="plusColor">
+                                        <color key="value" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -57,29 +46,30 @@
                             <constraint firstItem="nXr-zq-6cF" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="8z7-1S-Qri"/>
                             <constraint firstItem="nXr-zq-6cF" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="IBZ-69-b8U"/>
                             <constraint firstAttribute="bottom" secondItem="nXr-zq-6cF" secondAttribute="bottom" id="Lcj-eC-LKi"/>
-                            <constraint firstItem="P15-kg-Fia" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bLP-XI-hON"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="P15-kg-Fia" secondAttribute="bottom" constant="140" id="yY8-by-3dC"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="P0P-aq-CmH" secondAttribute="trailing" constant="20" id="mH4-41-y1d"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="P0P-aq-CmH" secondAttribute="bottom" constant="20" id="vjI-Kc-B99"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="T0i-Zl-tQ8">
                         <barButtonItem key="rightBarButtonItem" systemItem="camera" id="ooY-7R-Efg">
+                            <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <action selector="cameraTapped:" destination="BYZ-38-t0r" id="27q-jF-c4p"/>
+                                <action selector="cameraTapped:" destination="BYZ-38-t0r" id="liG-Py-hia"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="floaty" destination="P0P-aq-CmH" id="MhZ-rL-qPA"/>
                         <outlet property="imageView" destination="nXr-zq-6cF" id="xKc-16-oFH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="572" y="92"/>
+            <point key="canvasLocation" x="808.69565217391312" y="91.741071428571431"/>
         </scene>
         <!--Launch Screen View Controller-->
         <scene sceneID="MhZ-dJ-IHg">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9XX-Yb-W1f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="fGw-G7-Yn4" customClass="LaunchScreenViewController" customModule="SeeFood" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2FS-Zf-l40">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -113,40 +103,37 @@
                     </view>
                     <connections>
                         <outlet property="myTypeWriterLabel" destination="pfC-R2-N5m" id="0ZE-ce-j0v"/>
-                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="showHome" modalPresentationStyle="fullScreen" id="7tx-Q1-Kht"/>
+                        <segue destination="21R-xY-9zb" kind="presentation" identifier="showHome" modalPresentationStyle="fullScreen" id="7tx-Q1-Kht"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9XX-Yb-W1f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1036.231884057971" y="91.741071428571431"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="OnQ-8k-6fR">
+        <scene sceneID="iwW-Da-ZKS">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="w1C-dt-FTh" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="21R-xY-9zb" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="tLb-VU-R4T">
+                    <navigationItem key="navigationItem" id="L4o-4r-pqU"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="g9O-AW-2ox">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="2Xy-Oe-umn"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="mls-39-PWa"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Sdz-r9-c4D" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5qa-aK-z3M" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-248" y="92"/>
+            <point key="canvasLocation" x="-109" y="92"/>
         </scene>
     </scenes>
     <designables>
         <designable name="pfC-R2-N5m"/>
     </designables>
-    <inferredMetricsTieBreakers>
-        <segue reference="7tx-Q1-Kht"/>
-    </inferredMetricsTieBreakers>
     <resources>
-        <image name="camera" width="50" height="50"/>
-        <image name="gallery" width="64" height="64"/>
         <image name="hotdogpropic" width="1080" height="1920"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
